@@ -1,4 +1,6 @@
 import 'package:blogs_app/screens/blog_maker_screen.dart';
+import 'package:blogs_app/services/crud.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -7,6 +9,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  CrudMethods crudMethods = CrudMethods();
+  QuerySnapshot querySnapshot;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
